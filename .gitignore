@@ -34,3 +34,16 @@ output/
 .idea/
 
 target/
+.DS_Store
+
+.classpath.txt
+.classpath
+.project
+.idea
+.settings
+.vscode
+*.iml
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
