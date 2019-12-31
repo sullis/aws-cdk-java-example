@@ -1,6 +1,6 @@
 # aws-cdk-java-example
 
-The `cdk.json` file tells the AWS CDK Toolkit how to execute your app.
+The `cdk.json` file tells the [AWS CDK Toolkit](https://github.com/aws/aws-cdk/) how to execute your app.
 
 ## Useful commands
 
@@ -10,4 +10,3 @@ The `cdk.json` file tells the AWS CDK Toolkit how to execute your app.
  * `cdk deploy`      deploy this stack to your default AWS account/region
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
-
