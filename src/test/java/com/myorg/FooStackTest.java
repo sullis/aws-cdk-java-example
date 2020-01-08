@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.hamcrest.CoreMatchers;
 
 import java.io.IOException;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class FooStackTest {
     private final static ObjectMapper JSON =
