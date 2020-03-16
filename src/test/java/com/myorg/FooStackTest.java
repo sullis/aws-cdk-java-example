@@ -23,8 +23,10 @@ public class FooStackTest {
         CloudAssembly assembly = app.synth();
         Map<String, Object> template = (Map<String, Object>) assembly.getStackArtifact(stack.getArtifactId()).getTemplate();
         assertThat(template).containsKey("Resources");
+
         String json = MAPPER.writeValueAsString(template);
         assertThat(json).contains("AWS::SQS::Queue");
         assertThat(json).contains("AWS::SNS::Topic");
+        assertThat(json).contains("AWS::Lambda::Function");
     }
 }
