@@ -1,13 +1,12 @@
 package com.myorg;
+
 import software.amazon.awscdk.core.App;
 import software.amazon.awscdk.cxapi.CloudAssembly;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import org.junit.Test;
-import org.hamcrest.CoreMatchers;
-
-import static org.hamcrest.MatcherAssert.assertThat;
+import org.junit.jupiter.api.Test;
+import static com.google.common.truth.Truth.assertThat;
 
 public class FooStackTest {
     private final static ObjectMapper MAPPER =
@@ -21,6 +20,7 @@ public class FooStackTest {
         CloudAssembly assembly = app.synth();
         Object template = assembly.getStackArtifact(stack.getArtifactId()).getTemplate();
         String json = MAPPER.writeValueAsString(template);
-        assertThat(json, CoreMatchers.both(CoreMatchers.containsString("AWS::SQS::Queue")).and(CoreMatchers.containsString("AWS::SNS::Topic")));
+        assertThat(json).contains("AWS::SQS::Queue");
+        assertThat(json).contains("AWS::SNS::Topic");
     }
 }
