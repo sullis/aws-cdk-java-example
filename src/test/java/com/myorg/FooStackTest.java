@@ -6,6 +6,9 @@ import software.amazon.awscdk.cxapi.CloudAssembly;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.junit.jupiter.api.Test;
+
+import java.util.Map;
+
 import static com.google.common.truth.Truth.assertThat;
 
 public class FooStackTest {
@@ -18,7 +21,8 @@ public class FooStackTest {
         FooStack stack = new FooStack(app, "test");
 
         CloudAssembly assembly = app.synth();
-        Object template = assembly.getStackArtifact(stack.getArtifactId()).getTemplate();
+        Map<String, Object> template = (Map<String, Object>) assembly.getStackArtifact(stack.getArtifactId()).getTemplate();
+        assertThat(template).containsKey("Resources");
         String json = MAPPER.writeValueAsString(template);
         assertThat(json).contains("AWS::SQS::Queue");
         assertThat(json).contains("AWS::SNS::Topic");
