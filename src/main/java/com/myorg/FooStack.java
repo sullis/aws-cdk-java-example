@@ -6,6 +6,8 @@ import software.amazon.awscdk.core.Stack;
 import software.amazon.awscdk.core.StackProps;
 import software.amazon.awscdk.services.lambda.Code;
 import software.amazon.awscdk.services.lambda.Runtime;
+import software.amazon.awscdk.services.lambda.Tracing;
+import software.amazon.awscdk.services.logs.RetentionDays;
 import software.amazon.awscdk.services.sns.Topic;
 import software.amazon.awscdk.services.sns.subscriptions.SqsSubscription;
 import software.amazon.awscdk.services.sqs.Queue;
@@ -34,6 +36,11 @@ public class FooStack extends Stack {
                 .description("Lambda Function description")
                 .code(code)
                 .handler("myHandler")
+                .functionName("myFunctionName")
+                .logRetention(RetentionDays.ONE_MONTH)
+                .memorySize(1024)
+                .tracing(Tracing.ACTIVE)
+                .timeout(Duration.seconds(10))
                 .runtime(Runtime.NODEJS_12_X)
                 .build();
     }
