@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Map;
 
-import static com.google.common.truth.Truth.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class FooStackTest {
     private final static ObjectMapper MAPPER =
