@@ -20,10 +20,10 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: ${{ matrix.java }}
-    - name: setup AWS CDK
-      run: make setup
     - name: print Java version
       run: java -version
+    - name: setup AWS CDK
+      run: make setup
     - uses: actions/cache@v2
       with:
         path: ~/.m2/repository
