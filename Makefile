@@ -1,6 +1,6 @@
 
 
 setup:
-	npm install -g npm
-	npm install -g aws-cdk
+	npm install npm
+	npm install aws-cdk
 	cdk --version
