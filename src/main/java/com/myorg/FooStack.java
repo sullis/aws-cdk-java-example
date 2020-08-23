@@ -4,6 +4,8 @@ import software.amazon.awscdk.core.Construct;
 import software.amazon.awscdk.core.Duration;
 import software.amazon.awscdk.core.Stack;
 import software.amazon.awscdk.core.StackProps;
+import software.amazon.awscdk.services.certificatemanager.Certificate;
+import software.amazon.awscdk.services.certificatemanager.CertificateValidation;
 import software.amazon.awscdk.services.lambda.Code;
 import software.amazon.awscdk.services.lambda.Function;
 import software.amazon.awscdk.services.lambda.Runtime;
@@ -20,6 +22,11 @@ public class FooStack extends Stack {
 
     public FooStack(final Construct parent, final String id, final StackProps props) {
         super(parent, id, props);
+
+        final Certificate cert = Certificate.Builder.create(this, "FooCertificate")
+                .domainName("foo.example.com")
+                .validation(CertificateValidation.fromDns())
+                .build();
 
         final Queue queue = Queue.Builder.create(this, "FooQueue")
                 .visibilityTimeout(Duration.seconds(300))
