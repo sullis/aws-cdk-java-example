@@ -21,6 +21,8 @@ jobs:
         node-version: '12'
     - name: print Node version
       run: node --version
+    - name: print NVM version
+      run: nvm --version
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
