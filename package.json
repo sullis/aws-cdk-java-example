@@ -1,7 +1,0 @@
-{
-  "name": "aws-cdk-java-example",
-  "version": "0.0.1",
-  "dependencies": {
-    "aws-cdk": "1.60.0"
-  }
-}
