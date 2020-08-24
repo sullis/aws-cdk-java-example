@@ -1,6 +1,4 @@
 
-
 setup:
-	npm install nvm
-	npm install
+	npm install aws-cdk
 	cdk --version
