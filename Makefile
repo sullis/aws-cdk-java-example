@@ -1,4 +1,4 @@
 
 setup:
-	npm install aws-cdk
+	npm install -g aws-cdk
 	cdk --version
