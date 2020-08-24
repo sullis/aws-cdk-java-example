@@ -21,8 +21,6 @@ jobs:
         node-version: '12'
     - name: print Node version
       run: node --version
-    - name: print NVM version
-      run: nvm --version
     - name: Set up JDK
       uses: actions/setup-java@v1
       with:
@@ -31,6 +29,8 @@ jobs:
       run: java -version
     - name: setup AWS CDK
       run: make setup
+    - name: print CDK version
+      run: cdk --version
     - uses: actions/cache@v2
       with:
         path: ~/.m2/repository
