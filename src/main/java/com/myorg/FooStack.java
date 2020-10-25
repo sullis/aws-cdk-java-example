@@ -47,8 +47,10 @@ public class FooStack extends Stack {
                 .logRetention(RetentionDays.ONE_MONTH)
                 .memorySize(1024)
                 .tracing(Tracing.ACTIVE)
+                .profiling(false)
                 .timeout(Duration.seconds(10))
                 .runtime(Runtime.NODEJS_12_X)
+                .allowPublicSubnet(false)
                 .build();
     }
 }
