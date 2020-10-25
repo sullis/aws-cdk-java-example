@@ -25,8 +25,9 @@ public class FooStackTest {
         assertThat(template).containsKey("Resources");
 
         String json = MAPPER.writeValueAsString(template);
-        assertThat(json).contains("AWS::SQS::Queue");
-        assertThat(json).contains("AWS::SNS::Topic");
-        assertThat(json).contains("AWS::Lambda::Function");
+        assertThat(json)
+                .contains("AWS::SQS::Queue")
+                .contains("AWS::SNS::Topic")
+                .contains("AWS::Lambda::Function");
     }
 }
