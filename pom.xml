@@ -8,7 +8,7 @@
     <version>0.1</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <cdk.version>1.101.0</cdk.version>
+        <cdk.version>2.0.0-rc.1</cdk.version>
         <junit.version>5.8.0-M1</junit.version>
     </properties>
     <build>
@@ -44,39 +44,13 @@
     <dependencies>
         <dependency>
             <groupId>software.amazon.awscdk</groupId>
-            <artifactId>core</artifactId>
-            <version>${cdk.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>software.amazon.awscdk</groupId>
-            <artifactId>certificatemanager</artifactId>
+            <artifactId>aws-cdk-lib</artifactId>
             <version>${cdk.version}</version>
         </dependency>
         <dependency>
-            <groupId>software.amazon.awscdk</groupId>
-            <artifactId>sns</artifactId>
-            <version>${cdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>software.amazon.awscdk</groupId>
-            <artifactId>sns-subscriptions</artifactId>
-            <version>${cdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>software.amazon.awscdk</groupId>
-            <artifactId>sqs</artifactId>
-            <version>${cdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>software.amazon.awscdk</groupId>
-            <artifactId>lambda</artifactId>
-            <version>${cdk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>software.amazon.awscdk</groupId>
-            <artifactId>cdk-pipelines</artifactId>
-            <version>${cdk.version}</version>
+            <groupId>software.constructs</groupId>
+            <artifactId>constructs</artifactId>
+            <version>10.0.5</version>
         </dependency>
         <dependency>
           <groupId>org.junit.jupiter</groupId>
