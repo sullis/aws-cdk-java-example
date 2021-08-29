@@ -33,12 +33,6 @@ jobs:
       run: make setup
     - name: print CDK version
       run: cdk --version
-    - uses: actions/cache@v2.1.6
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-maven-
     - name: Build
       run: mvn --no-transfer-progress -B clean package
     - name: cdk synth
