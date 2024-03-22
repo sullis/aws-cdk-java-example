@@ -22,7 +22,7 @@ jobs:
     - name: print Node version
       run: node --version
     - name: Set up JDK
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         distribution: 'zulu'
         java-version: ${{ matrix.java }}
