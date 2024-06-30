@@ -39,7 +39,12 @@ public class FooStack extends Stack {
 
         topic.addSubscription(new SqsSubscription(queue));
 
-        final Bucket bucket = Bucket.Builder.create(this, "FooBucket").build();
+        final Bucket bucket = Bucket.Builder.create(this, "FooBucket")
+            .bucketName("FooBucketName")
+            .enforceSsl(true)
+            .publicReadAccess(false)
+            .versioned(false)
+            .build();
 
         final Code code = Code.fromInline("Hello world");
         final Function func = Function.Builder.create(this, "FooLambda")
