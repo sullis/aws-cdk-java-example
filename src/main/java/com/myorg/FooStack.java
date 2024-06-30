@@ -1,5 +1,6 @@
 package com.myorg;
 
+import java.util.UUID;
 import software.constructs.Construct;
 import software.amazon.awscdk.Duration;
 import software.amazon.awscdk.Stack;
@@ -39,8 +40,10 @@ public class FooStack extends Stack {
 
         topic.addSubscription(new SqsSubscription(queue));
 
+        final String bucketName = "test-" + UUID.randomUUID().toString().toLowerCase();
+
         final Bucket bucket = Bucket.Builder.create(this, "FooBucket")
-            .bucketName("FooBucketName")
+            .bucketName(bucketName)
             .enforceSsl(true)
             .publicReadAccess(false)
             .versioned(false)
