@@ -11,5 +11,6 @@ The `cdk.json` file tells the [AWS CDK Toolkit](https://github.com/aws/aws-cdk/)
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
 
-# S3
-- [https://docs.aws.amazon.com/cdk/api/v2/java/software/amazon/awscdk/services/s3/package-summary.html](s3 package)
+# CDK packages
+- [s3](https://docs.aws.amazon.com/cdk/api/v2/java/software/amazon/awscdk/services/s3/package-summary.html)
+
