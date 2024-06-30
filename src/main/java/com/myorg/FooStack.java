@@ -14,6 +14,7 @@ import software.amazon.awscdk.services.logs.RetentionDays;
 import software.amazon.awscdk.services.sns.Topic;
 import software.amazon.awscdk.services.sns.subscriptions.SqsSubscription;
 import software.amazon.awscdk.services.sqs.Queue;
+import software.amazon.awscdk.services.s3.Bucket;
 
 public class FooStack extends Stack {
     public FooStack(final Construct parent, final String id) {
@@ -37,6 +38,8 @@ public class FooStack extends Stack {
             .build();
 
         topic.addSubscription(new SqsSubscription(queue));
+
+        final Bucket bucket = Bucket.Builder.create(this, "FooBucket").build();
 
         final Code code = Code.fromInline("Hello world");
         final Function func = Function.Builder.create(this, "FooLambda")
