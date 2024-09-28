@@ -1,6 +1,8 @@
 package com.myorg;
 
+import java.util.List;
 import java.util.UUID;
+import software.amazon.awscdk.services.s3.BucketMetrics;
 import software.constructs.Construct;
 import software.amazon.awscdk.Duration;
 import software.amazon.awscdk.Stack;
@@ -42,8 +44,12 @@ public class FooStack extends Stack {
 
         final String bucketName = "test-" + UUID.randomUUID().toString().toLowerCase();
 
+        BucketMetrics bucketMetrics = BucketMetrics.builder().id("bucketMetrics1").prefix("foobar").build();
+
         final Bucket bucket = Bucket.Builder.create(this, "FooBucket")
             .bucketName(bucketName)
+            .eventBridgeEnabled(false)
+            .metrics(List.of(bucketMetrics))
             .enforceSsl(true)
             .publicReadAccess(false)
             .versioned(false)
