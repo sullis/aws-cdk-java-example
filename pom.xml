@@ -9,7 +9,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <cdk.version>2.203.1</cdk.version>
-        <junit.version>5.13.2</junit.version>
+        <junit.version>5.13.3</junit.version>
     </properties>
     <build>
         <plugins>
